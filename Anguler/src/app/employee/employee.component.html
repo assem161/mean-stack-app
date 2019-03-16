@@ -1,0 +1,35 @@
+<div class="container fill-app">
+  <h3>add your detalies</h3>
+  <div class="row">
+    <form class="col s12 m6" #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+      <input name="_id" type="hidden" ngModel #_id="ngModel">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" name="name" #name="ngModel" required ngModel class="validate">
+          <label for="Name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" name="position" #position="ngModel" required ngModel class="validate">
+          <label for="position">position</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" name="office" #office="ngModel" required ngModel class="validate">
+          <label for="office">office</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="salary" #salary="ngModel" ngModel required type="text" class="validate">
+          <label for="salary">salary</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="Rest" type="button" class="validate btn btn-small right">Rest</button>
+        <button id="submit" type="submit" [disabled]='!name.valid' class="validate btn btn-small right">submit</button>
+      </div>
+    </form>
+  </div>
+</div>
